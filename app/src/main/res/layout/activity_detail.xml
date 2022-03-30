@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:background="@color/green_light">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/green_light"
+        app:cardBackgroundColor="@color/green_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_item_username"
+                style="@style/TextTittle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:ellipsize="end"
+                android:maxLines="5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.054"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.533"
+                tools:text="@string/username" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="83dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        tools:src="@tools:sample/avatars">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/img_item_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_item_photo"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        app:layout_constraintVertical_bias="0.329"
+        tools:text="@string/name" />
+
+    <TextView
+        android:id="@+id/tv_item_company"
+        style="@style/TextContent.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/img_item_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/img_item_photo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_name"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/company" />
+
+
+    <TextView
+        android:id="@+id/tv_item_location"
+        style="@style/TextContent.Small.Grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        app:layout_constraintBottom_toBottomOf="@+id/img_item_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/img_item_photo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_company"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="@string/location" />
+
+    <TextView
+        android:id="@+id/tv_item_repository"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_location" />
+
+    <TextView
+        android:id="@+id/tv_item_following"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="52dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+    <TextView
+        android:id="@+id/tv_item_followers"
+        style="@style/TextContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="80dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/tv_item_following"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_repository"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+
+    <TextView
+        style="@style/TextContent.Small"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        android:text="@string/following"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_item_following"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_following"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_following"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        style="@style/TextContent.Small"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/img_item_photo"
+        android:text="@string/followers"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_item_followers"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_followers"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_followers"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextContent.Small"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/img_item_photo"
+        android:text="@string/repository"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_item_repository"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="@+id/tv_item_repository"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_repository"
+        app:layout_constraintVertical_bias="0.054" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
